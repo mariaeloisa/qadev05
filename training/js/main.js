@@ -79,10 +79,10 @@ var getSum = function(collection, cant){
     }
 
     };
-console.log(getSum([5,3,4,9,2], 5));
-console.log(getAvg([3,3,3], 3));
-console.log(getMajor([8,2,3], 3, 0));
-console.log(getMenor([8,2,3], 3, 0));
+//console.log(getSum([5,3,4,9,2], 5));
+//console.log(getAvg([3,3,3], 3));
+//console.log(getMajor([8,2,3], 3, 0));
+//console.log(getMenor([8,2,3], 3, 0));
 
 
 var isCapicua = function(num){
@@ -111,8 +111,8 @@ var isCapicua = function(num){
         console.log('no');
     }
    // for(int i = 0; i< colletionNumbers.length)
-    console.log(num);
-    console.log(colletionNumbers,  index);
+ //   console.log(num);
+   // console.log(colletionNumbers,  index);
 }
 var caipua = isCapicua(121);
 /*
@@ -122,3 +122,49 @@ var caipua = isCapicua(121);
  //min is :1
  //Avg is :2
 */
+var reverseString = function(string){
+    var rever;
+    var o = 0;
+    for(var i = 0; i < string.length ; i--)
+    {
+        rever[o] = string[i];
+        i--;
+        o++;
+    }
+    return rever;
+}
+//var reverce = reverseString('hola');
+
+var factorial = function(num){
+    var fact = 1;
+    var ind = 1;
+   /* if(num > 0)
+    {
+
+        while(ind < num);
+        {
+            fact = fact*(ind + 1)
+            ind ++;
+        }
+        return Console.log(fact);
+    }
+    else
+    {
+        return 0;
+    }*/
+
+
+};
+var numfact = 2;
+//factorial(numfact);
+//revisar
+var truncate = function(parag,num){
+    //console.log(parag);
+    var newparagrafh = '';
+    for(var i = 0; i < num ; i ++)
+    {
+        newparagrafh = newparagrafh + parag[i]
+    }
+    return newparagrafh;
+}
+var paragrafh = truncate('hola mundo', 3);

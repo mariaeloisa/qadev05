@@ -88,47 +88,63 @@ Table.prototype.setShipsOnTable = function(){
         var coorY = Math.round(Math.random() * (t.sizeTable - 1));
         //this line is to validate that there is space for the ship
        // if()
-        if(coorX + this.Ships[indexShip].sizeShip <= this.sizeTable)
+        if(coorY + this.Ships[indexShip].sizeShip <= this.sizeTable)
         {
-            console.log(coorX+'-'+coorY);
-            this.fillTable(coorX,coorY,indexShip);
+            //console.log('s'+(coorX + this.Ships[indexShip].sizeShip));
+            //console.log(coorX+'-'+coorY);
+            var pos = Math.round(Math.random()*1);
+            console.log('H'+pos);
+            this.fillTableH(coorX,coorY,indexShip,pos);
             indexShip++;
         }
     }
     while(indexShip < this.Ships.length);
 
 }
-Table.prototype.verifySpace = function (coorX,coorY,indexShip) {
-    for(var col = 0; col < this.Ships[indexShip].sizeShip; col++)
-    {
-        this.cell[coorX][coorY] = this.getLetter(coorX)+''+coorY;
-        coorY++;
-    }
-}
+//Table.prototype.verifySpace = function (coorX,coorY,indexShip) {
+//    for(var col = 0; col < this.Ships[indexShip].sizeShip; col++)
+//    {
+//        this.cell[coorX][coorY] = this.getLetter(coorX)+''+coorY;
+//        coorY++;
+//    }
+//}
 /**
  * THis functions fill a ship in the table
  * @constructor
  */
-Table.prototype.fillTable = function (coorX,coorY,indexShip) {
+Table.prototype.fillTableH = function (coorX, coorY, indexShip, pos) {
+
     var sizeShip = this.Ships[indexShip].sizeShip;
-    for(var col = 0; col < sizeShip; col++)
+    if(pos == 0)
     {
         console.log(indexShip);
-        this.cell[coorX][coorY] = indexShip;
-        for(var i = 0; i <sizeShip; i++)
-        {
-            this.Ships[indexShip].cell[i] = this.getLetter(coorX);
-        }
 
-        this.Ships[indexShip];
-        coorY++;
+        for(var i = 0; i < sizeShip; i++)
+        {
+            this.cell[coorX][coorY] = indexShip;
+            this.Ships[indexShip].Cell[i] = this.getLetter(coorX)+''+coorY;
+            coorY++;
+        }
     }
+    else
+    {
+        console.log(indexShip);
+
+        for(var i = 0; i < sizeShip; i++)
+        {
+            this.cell[coorX][coorY] = indexShip;
+            this.Ships[indexShip].Cell[i] = this.getLetter(coorX)+''+coorY;
+            coorX++;
+        }
+    }
+
+
 }
 Table.prototype.getLetter = function (index){
     var abcd = ['A','B','C','D','E','F','G','H','I','J','K','L','M'];
     return abcd[index];
 }
-//Table.prototype.fillSpaceOnShip();
+//Table.prototype.;
 /**
  * This function validates that a ship not is entered over other ship
  */

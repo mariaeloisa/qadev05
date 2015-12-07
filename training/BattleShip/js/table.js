@@ -94,7 +94,7 @@ Table.prototype.setShipsOnTable = function(){
             //console.log(coorX+'-'+coorY);
             var pos = Math.round(Math.random()*1);
             console.log('H'+pos);
-            this.fillTableH(coorX,coorY,indexShip,pos);
+            this.fillTable(coorX,coorY,indexShip,pos);
             indexShip++;
         }
     }
@@ -112,7 +112,7 @@ Table.prototype.setShipsOnTable = function(){
  * THis functions fill a ship in the table
  * @constructor
  */
-Table.prototype.fillTableH = function (coorX, coorY, indexShip, pos) {
+Table.prototype.fillTable = function (coorX, coorY, indexShip, pos) {
 
     var sizeShip = this.Ships[indexShip].sizeShip;
     if(pos == 0)
